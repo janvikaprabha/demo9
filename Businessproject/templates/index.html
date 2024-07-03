@@ -1,0 +1,822 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<header>
+<!--     <center>-->
+<!--			<img src="{% static 'images/logo.jpg' %}" alt="logoimage" width="130px;" height="130px;">-->
+<!--        </center>-->
+
+<!--    <center>-->
+<!--        <h2 style="color:blue"><b>NEUTON COLLEGE OF ENGINEERING</b></h2>-->
+<!--        <h6 style="color:dark-pink">Affliated to APJ Abdul Kalam Technological University,Kerala</h6>-->
+<!--    </center>-->
+
+</header>
+<head>
+
+<title>Index</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travello template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<style>
+    .scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container .img {
+  padding: 10px;
+}
+.badge {
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+.flip-box {
+  background-color: transparent;
+  width: 280px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+   display: flex;
+  flex-flow: row wrap;
+  align-items: center;/* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side */
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    left:10%;
+  content: "";
+  clear: both;
+  display: table;
+}
+.blink {
+                animation: blinker 1.5s linear infinite;
+                color: red;
+                font-family: sans-serif;
+            }
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+
+.container-flip{
+    position flex;
+    left:4%;
+
+}
+.admission{
+    left:44%;
+}
+.index-page{
+    left:1%;
+    right:5%;
+
+}
+</style>
+</head>
+
+
+<!--<div class="super_container">-->
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--  <div class="container-fluid">-->
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active"  style="color:green;" aria-current="page" href="">Home</a>-->
+<!--        </li>-->
+
+<!--        <li class="nav-item dropdown {% if 'businessapp' in request.path %} active {% endif %} ">-->
+<!--          <a class="nav-link dropdown-toggle"  style="color:green;" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            Departments-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item"  style="color:green;" href="{% url 'businessapp:department' %}">All Departments</a></li>-->
+<!--             {% for cat in links %}-->
+<!--			  <li><a class="dropdown-item" href="{{cat.get_url}}">{{cat.name}}</a></li>-->
+<!--			   {% endfor %}-->
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+
+<!--      </ul>-->
+
+
+
+
+<!--		 <li class="nav-item dropdown {% if 'businessapp' in request.path %} active {% endif %}">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            Dropdown-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu">-->
+<!--            <li><a class="dropdown-item" href="#" >Action</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--<div class="dropdown">-->
+<!--  <a class="btn btn-secondary dropdown-toggle" href="{% url 'businessapp:department' %}" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--    Dropdown link-->
+<!--  </a>-->
+
+<!--  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+<!--    <li><a class="dropdown-item" href="{{cat.get_url}}">Action</a></li>-->
+<!--    <li><a class="dropdown-item" href="{% url 'businessapp:department' %}">Another action</a></li>-->
+<!--    <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+
+<!--				<form class="d-flex">-->
+<!--			 	 <a class="btn btn-outline-success" href="{% url 'register' %}" type="register">REGISTER</a>-->
+<!--				</form>-->
+
+<!--				<form class="d-flex">-->
+<!--			    <a class="btn btn-outline-success" href="{% url 'login' %}" type="Login">LOGIN</a>-->
+<!--				</form>-->
+
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+
+<body>
+
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div>
+							<img src="{% static 'images/logo.png' %}" alt="logoimage" width="70px;" height="70px;">
+							</div>
+							<div class="logo"><a href="/"><em><b><h3 style="color:red">ORBIDENTZ</h3></b></em></a></div>
+
+
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li><a href="/">Home</a></li>
+<!--									<li class="active"><a href="businessapp/about">About us</a></li>-->
+<!--									{% if user.is_authenticated %}-->
+<!--									<li>Hello{{user.username}}</li>-->
+<!--									<li><a href="credentials/logout">Logout</a></li>-->
+<!--                                    {% else %}-->
+                                    <li><a href="credentials/about">About Us</a></li>
+									<li><a href="credentials/register">Book Here</a></li>
+<!--									<li><a href="credentials/login">Login</a></li>-->
+                                    {% endif %}
+
+								</ul>
+							</nav>
+							<div class="header_phone ml-auto">Call us: +91 9895932238</div>
+
+							<!-- Hamburger -->
+
+							<div class="hamburger ml-auto">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header_social d-flex flex-row align-items-center justify-content-start">
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+			<div class="menu_logo"><a href="index.html">Travello</a></div>
+			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
+		</div>
+		<div class="menu_content">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About us</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<div class="menu_social">
+			<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url({% static 'images/bgd.jpg' %})"></div>
+	</div>
+
+<!--	about-->
+
+
+	<div class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle" style="color:orange">simply amazing places</div>
+					<div class="section_title">
+						<h2 style="color:black">A few words about us</h2>
+					</div>
+				</div>
+			</div>
+			<div>
+			<div class="row about_row">
+				<div class="col-lg-6">
+					<div class="about_content">
+						<div class="text_highlight">Orbidenz group is a company with businesses across Sri Lanka, Australia, India and UAE. The founder is Dr.Niluka Welikala and is a philanthropist who is interested in serving her country and
+people across preventive and curative healthcare. </div>
+						<div class="about_text"><p>Orbidenz group is a Sri Lankan Multinational company with businesses across Sri Lanka, Hospitals Australia, India and UAE. The founder is Dr.Niluka Welikala and is a philanthropist who is interested in serving her country and people across preventive and curative healthcare. With this in mind
+Dr.Niluka has signed a clinical collaboration with Apollo Hospitals GroupIndia and started Sri Lanka’s largest tele health services through Lanka E.Doc. .</p>
+							</div>
+
+						<div class="button about_button"><a href="#">read more</a></div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about_image"><img src="{% static 'images/about.png' %}" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- Search -->
+
+<!--	<div class="home_search">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col">-->
+<!--					<div class="home_search_container">-->
+<!--						<div class="home_search_title">Search for your trip</div>-->
+<!--						<div class="home_search_content">-->
+<!--							<form action="#" class="home_search_form" id="home_search_form">-->
+<!--								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">-->
+<!--									<input type="text" class="search_input search_input_1" placeholder="City" required="required">-->
+<!--									<input type="text" class="search_input search_input_2" placeholder="Departure" required="required">-->
+<!--									<input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">-->
+<!--									<input type="text" class="search_input search_input_4" placeholder="Budget" required="required">-->
+<!--									<button class="home_search_button">search</button>-->
+<!--								</div>-->
+<!--							</form>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+
+
+<!--<div class="index-page">-->
+<!--	<div class="menu-bar">-->
+<!--    <ul>-->
+
+<!--	<li class="active"><a href="#" style="color:white"><i class="fa fa-home"></i>HOME</a></li>-->
+
+<!--				<li><a href="#"  style="color:white"><i class="fa-solid fa-list-dropdown"></i>DEPARTMENT</a>-->
+<!--					<div class="sub-menu-1">-->
+<!--						<ul>-->
+
+
+
+<!--		                    	<li><a href="https://en.wikipedia.org/wiki/Electronic_engineering">ECE</a></li>-->
+
+
+
+<!--							<li><a href="https://en.wikipedia.org/wiki/Computer_science_and_engineering" style="color:white">CSE</a></li>-->
+
+
+
+
+<!--							<li><a href="https://en.wikipedia.org/wiki/Electrical_engineering" style="color:white">EEE</a></li>-->
+
+
+
+
+<!--							<li><a href="https://en.wikipedia.org/wiki/Instrumentation_and_control_engineering" style="color:white">ICE</a></li>-->
+
+
+
+
+<!--							<li><a href="https://en.wikipedia.org/wiki/Civil_engineering" style="color:white">Civil</a></li>-->
+
+
+
+<!--							<li><a href="https://en.wikipedia.org/wiki/Mechanical_engineering" style="color:white">Mechanical</a></li>-->
+
+<!--						</ul>-->
+<!--					</div>-->
+
+<!--				</li>-->
+
+<!--	<li><a href="credentials/register"  style="color:white"><i class="fa-solid fa-list-dropdown" style="color:white"></i>REGISTER</a>-->
+<!--	<li><a href="credentials/login"  style="color:white"><i class="fa-solid fa-list-dropdown" style="color:white"></i>LOGIN</a>-->
+<!--</ul>-->
+<!--	</div>-->
+<!--<br>-->
+
+<!-- <div class="admission">-->
+<!--  <marquee direction="DOWN"><b><h4 style="color:red">ADMISSIONS STARTED</h4></b></marquee>-->
+<!--  </div>-->
+
+
+<!--	<br>-->
+<!--<div>-->
+<!--<center>-->
+<!--<img class="my_image my_image_padding" src="{% static 'images/v2.jpg' %}" alt= "our products" style="width:100%;height:500px";>-->
+<!--    </center>-->
+<!--</div>-->
+
+<!--	<marquee><h6 style="color:black"><span class="badge"></span><h6 style="color:red"> Kollam</h6>-859+5656 <span class="badge"></span> </span><h6 style="color:red">Alleppy</h6>-545454341 <span class="badge"></span><h6 style="color:red">Idukki</h6>-876543132  <span class="badge"></span> </span><h6 style="color:red">Malappuram</h6>-545454341  <span class="badge"></span> </span><h6 style="color:red">Ernakulam</h6>-545454341  <span class="badge"></span> </span><h6 style="color:red">Thrissur</h6>-545454341  <span class="badge"></span> </span><h6 style="color:red">Vayanad</h6>-545454341  <span class="badge"></span> </span> <span class="badge"></span> </span> <h6 style="color:red">Palakkad</h6>-545454341  </h6></marquee><br>-->
+
+<!--<div>-->
+<!-- <center>-->
+<!--  <form >-->
+<!--	  <a class="btn btn-outline-success" href="credentials/login" style="color:#00ff00" type="Login"><b>LOGIN HERE</b></a>-->
+<!--  </form>-->
+<!--   </center>-->
+
+<!--</div>-->
+
+<br>
+
+
+	<!-- Milestones --><br>
+
+<!--	<div class="milestones">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+
+<!--				&lt;!&ndash; Milestone &ndash;&gt;-->
+<!--				<div class="col-lg-3 milestone_col">-->
+<!--					<div class="milestone text-center">-->
+<!--						<div class="milestone_icon"><img src="{% static 'images/img.png' %}" style="width:50; height:50;" alt=""></div>-->
+<!--						<div class="milestone_counter" data-end-value="1500">0</div>-->
+<!--						<div class="milestone_text">Achievements</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				&lt;!&ndash; Milestone &ndash;&gt;-->
+<!--				<div class="col-lg-3 milestone_col">-->
+<!--					<div class="milestone text-center">-->
+<!--						<div class="milestone_icon"><img src="{% static 'images/placement.png' %}" style="width:50; height:50;" alt=""></div>-->
+<!--						<div class="milestone_counter" data-end-value="2345">0</div>-->
+<!--						<div class="milestone_text">Placements</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				&lt;!&ndash; Milestone &ndash;&gt;-->
+<!--				<div class="col-lg-3 milestone_col">-->
+<!--					<div class="milestone text-center">-->
+<!--						<div class="milestone_icon"><img src="{% static 'images/alumini.png' %}" style="width:50; height:50;" alt=""></div>-->
+<!--						<div class="milestone_counter" data-end-value="11923">0</div>-->
+<!--						<div class="milestone_text">Alumni</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				&lt;!&ndash; Milestone &ndash;&gt;-->
+<!--				<div class="col-lg-3 milestone_col">-->
+<!--					<div class="milestone text-center">-->
+<!--						<div class="milestone_icon"><img src="{% static 'images/img_1.png' %}" style="width:50; height:50;" alt=""></div>-->
+<!--						<div class="milestone_counter" data-end-value="150">0</div>-->
+<!--						<div class="milestone_text">Institute Social Responsibility</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+
+<br>
+
+<div class="scroll-container">
+    <img src="{% static 'images/1.jpg' %}" alt="Cinque Terre" style="width:300px; height:300px;">
+  <img src="{% static 'images/2.jpg' %}" alt="Cinque Terre" style="width:300px; height:300px;">
+  <img src="{% static 'images/3.jpg' %}" alt="Forest" style="width:300px; height:300px;">
+  <img src="{% static 'images/4.jpg' %}" alt="Northern Lights" style="width:300px; height:300px;">
+  <img src="{% static 'images/5.jpg' %}" alt="Mountains" style="width:300px; height:300px;">
+   <img src="{% static 'images/6.jpg' %}" alt="Mountains" style="width:300px; height:300px;">
+    <img src="{% static 'images/7.jpeg' %}" alt="Mountains" style="width:300px; height:300px;">
+     <img src="{% static 'images/8.jpeg' %}" alt="Mountains" style="width:300px; height:300px;">
+      <img src="{% static 'images/9.jpeg' %}" alt="Mountains" style="width:300px; height:300px;">
+       <img src="{% static 'images/10.jpeg' %}" alt="Mountains" style="width:300px; height:300px;">
+        <img src="{% static 'images/1.jpg' %}" alt="Mountains" style="width:300px; height:300px;">
+</div>
+<br>
+<hr>
+<div class="container-flip">
+<div class="row">
+  <div class="column">
+
+
+<div class="split left">
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+
+      <h2>RESORTS</h2></h2>
+      <p style="color:white">Computer Science Engineering (CSE) is an academic programme that integrates the field of Computer Engineering and Computer Science.
+      It is one of courses among engineering students.
+
+</p>
+    </div>
+    <div class="flip-box-back">
+      <h2  style="color:black">FOOD</h2>
+      <p style="color:white"> Civil engineering is a professional engineering discipline that deals with the design, construction,
+      and maintenance of the physical and naturally built environment, including public works
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<br>
+
+ <div class="column">
+
+<div class="split right">
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>BOATING</h2></h2>
+      <p style="color:white">Mechanical engineering is the study of physical machines that may involve force and movement.
+      It is an engineering branch that combines engineering physics
+      to design</p>
+    </div>
+    <div class="flip-box-back">
+      <h2  style="color:black">TRAVEL FACILITIES</h2>
+      <p  style="color:white"> Instrumentation engineering is the engineering specialization focused on the principle and operation of measuring instruments
+      hat are such as electrical and pneumatic domains, and the control.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="column">
+
+<div class="split right">
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <h2>FISHING</h2></h2>
+      <p style="color:white"> Electrical engineering is an engineering discipline concerned with the study, design, and application of equipment,
+      devices, and systems which use electricity, electronics,
+      and electromagnetism.</p>
+    </div>
+    <div class="flip-box-back">
+      <h2  style="color:black">MEDITATION</h2>
+      <p  style="color:white"> Electronic engineering is a sub-discipline of electrical engineering which emerged in the early 20th century and is distinguished by
+      the additional use of active components such as semiconductor.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<hr>
+        <marquee class="blink"><h5 style="color:black">Self-healing: Identifying and removing obstacles to recovery, allows for natural healing.• Underlying symptoms: Rather than stopping symptoms, a naturopathic doctor can resolve
+underlying physical or mental issues by treating the
+body, mind, and spirit.
+• Harmless treatment: Treatment plans should not have
+harmful side effects or control symptoms negatively.
+• Holistic treatment: A naturopathic doctor must
+recognize individuality to treat all aspects of a
+person’s health effectively.
+• Education in treatment: Naturopathic doctors teach
+self-care to help empower people against ill health.
+• Prevention: It is good to remove toxic substances
+from a lifestyle to prevent problems from arising.</h5></marquee>
+        <br>
+        <br>
+
+
+
+<br>
+	<!-- Why Choose Us -->
+
+
+<!--				&lt;!&ndash; Why item &ndash;&gt;-->
+<!--                {% for i in result %}-->
+<!--				<div class="col-lg-4 why_col">-->
+<!--					<div class="why_item">-->
+<!--						<div class="why_image">-->
+<!--							<img src="{{i.img.url}}" alt="">-->
+<!--							<div class="why_icon d-flex flex-column align-items-center justify-content-center">-->
+<!--								<img src="{% static 'images/why_1.svg' %}" alt="">-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="why_content text-center">-->
+<!--							<div class="why_title">{{i.name}}</div>-->
+<!--							<div class="why_text">-->
+<!--								<p>{{i.desc}}</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				{% endfor %}-->
+<!--				&lt;!&ndash; Why item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-lg-4 why_col">&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="why_item">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_image">&ndash;&gt;-->
+<!--&lt;!&ndash;							<img src="{% static 'images.webp/why_2.jpg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_icon d-flex flex-column align-items-center justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;								<img src="{% static 'images.webp/why_2.svg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_content text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_title">Great Team</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_text">&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+
+<!--				&lt;!&ndash; Why item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-lg-4 why_col">&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="why_item">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_image">&ndash;&gt;-->
+<!--&lt;!&ndash;							<img src="{% static 'images.webp/why_3.jpg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_icon d-flex flex-column align-items-center justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;								<img src="{% static 'images.webp/why_3.svg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_content text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_title">Best Deals</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_text">&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--	&lt;!&ndash; Team &ndash;&gt;-->
+
+<!--	<div class="team">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col text-center">-->
+<!--					<div class="section_subtitle">simply amazing places</div>-->
+<!--					<div class="section_title"><h2>Meet the Team</h2></div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="row team_row">-->
+
+<!--				&lt;!&ndash; Team Item &ndash;&gt;-->
+<!--                {% for j in result1 %}-->
+<!--				<div class="col-xl-3 col-md-6 team_col">-->
+<!--					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">-->
+<!--						<div class="team_image"><img src="{{j.img.url}}" alt=""></div>-->
+<!--						<div class="team_content">-->
+<!--							<div class="team_title"><a href="#">{{j.name}}</a></div>-->
+<!--							<div class="team_text">-->
+<!--								<p>{{j.desc}}</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--                {% endfor %}-->
+<!--				&lt;!&ndash; Team Item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-xl-3 col-md-6 team_col">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_image"><img src="{% static 'images.webp/team_2.jpg' %}" alt=""></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="team_title"><a href="#">James Williams</a></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_text">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;&ndash;&gt;-->
+
+<!--				&lt;!&ndash; Team Item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-xl-3 col-md-6 team_col">&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_image"><img src="{% static 'images.webp/team_3.jpg' %}" alt=""></div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_content">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="team_title"><a href="#">Michael James</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="team_text">&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+
+<!--				&lt;!&ndash; Team Item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-xl-3 col-md-6 team_col">&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_image"><img src="{% static 'images.webp/team_4.jpg' %}" alt=""></div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="team_content">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="team_title"><a href="#">Noah Smith</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="team_text">&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--	&lt;!&ndash; Footer &ndash;&gt;-->
+
+	<footer class="footer">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/16.jpg' %}"alt="logoimage" width="1300px;" height="100px;"> data-speed="0.8"></div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="newsletter">
+						<div class="newsletter_title_container text-center">
+
+			<div class="row footer_contact_row">
+				<div class="col-xl-10 offset-xl-1">
+					<div class="row">
+
+						<!--&lt;!&ndash; Footer Contact Item &ndash;&gt;-->
+						<div class="col-xl-4 footer_contact_col">
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+								<div class="footer_contact_icon"></div>
+								<div class="footer_contact_title"></div>
+								<div class="footer_contact_list">
+									<ul>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!--&lt;!&ndash; Footer Contact Item &ndash;&gt;-->
+						<div class="col-xl-4 footer_contact_col">				</div>
+
+					</div>
+				</div>
+			</div>
+
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+								<div class="footer_contact_icon"></div>
+								<div class="footer_contact_title"></div>
+								<div class="footer_contact_list">
+									<ul style.css="max-width:190px">
+										<li></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!--&lt;!&ndash; Footer Contact Item &ndash;&gt;-->
+						<div class="col-xl-4 footer_contact_col">
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+								<div class="footer_contact_icon"></div>
+								<div class="footer_contact_title"></div>
+								<div class="footer_contact_list">
+									<ul>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+<!--&lt;!&ndash;		</div>&ndash;&gt;-->
+
+
+</div>
+
+<footer>
+		<div class="col text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<p style="color:aqua">Orbidentz@2024. All rights reserved.</p>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</div>
+	</footer>
+
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/about.js' %}"></script>
+
+</div>
+</body>
+
+</html>

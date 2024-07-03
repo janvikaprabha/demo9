@@ -1,0 +1,429 @@
+{% load static %}
+<html>
+
+
+
+<header>
+
+<div class="l">
+     <center>
+			<img src="{% static 'images/logo.jpg' %}" alt="logoimage" width="130px;" height="130px;">
+        </center>
+
+</div>
+<nav class="navbar navbar-expand-lg bg-black">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+ <li class="nav-item">
+    {% if user.is_authenticated %}
+   <h4 style="color:c200fb;">Hello...... {{ user.username }}!</h4>
+ </li>
+
+
+{% else %}
+ <li class="nav-item">
+  <h4 style="color:c200fb;">You are not logged in</h4>
+     </li>
+          <li class="nav-item">
+ <a class="btn btn-outline-success" href="login" type="{% url 'login' %}">LOGIN</a>
+{% endif %}
+ </li>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+
+
+
+
+
+ <li class="nav-item">
+   <a class="btn btn-outline-success ms-auto" href="{% url 'logout' %}" type="Logout" style="color:white">LOGOUT</a>
+ </li>
+
+      </ul>
+
+
+    </div>
+  </div>
+
+</nav>
+
+
+
+<header
+<br>
+<head>
+
+
+    <link rel="stylesheet"  href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet"  href="{% static 'js/has.js' %}">
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5fcf3068b9.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+   <style>
+ .body{
+            background-color: F4DFC8;
+        }
+
+        {box-sizing: border-box;}
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: aqua;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: flex;
+  top:10%;
+  left:10%;
+
+  width: 300px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: flex;
+    top:90%;
+  left:40%;
+  height:2000px;
+  text-padding:10px;
+  width:600px;
+  padding:0;
+ margin:0 auto;
+}
+
+/* Add styles to the form container
+.form-container {
+    position: flex;
+    top:40%;
+
+  left:40%;
+  max-width: 300px;
+   max-height:1000px;
+  padding: 10px;
+  background-color: silver;
+  margin:0 auto;
+  text-align:left;
+}
+*/
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}*/
+
+/* When the inputs get focus, do something
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}*/
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  opacity: 0.8;
+} */
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+}
+
+.logout-button{
+    background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom:20%;
+  left:40%;
+
+  width: 280px;
+}
+
+.my_footer .p{
+
+  text-align:center;
+}
+.l{
+    top:0%;
+    left:30%;
+}
+.msg_m{
+   position: flex;
+    top:50%;
+
+  left:10%;
+  max-width: 300px;
+   max-height:1500px;
+  padding: 10px;
+  background-color: white;
+
+  text-align:left;
+
+
+}
+.log_msg{
+     position: fixed;
+    top:60%;
+  left:46%;
+  margin:0 auto;
+
+}
+.navbar .navitem .m{
+  float: right;
+}
+.my_reg{
+
+    position: flex;
+    top:30%;
+
+  left:80%;
+  max-width: 500px;
+   max-height:1500px;
+  padding: 10px;
+  background-color: silver;
+  margin:0 auto;
+  text-align:left;
+        }
+.body{
+    background-color:yellow;
+}
+.my_home{
+    position flex;
+    bottom:10%;
+    left:10%;
+}
+.application{
+     margin:0 auto;
+}
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<br>
+<div class="application">
+<center>
+<button class="open-button" onclick="openForm()">APPLICATION FORM</button>
+
+    </center>
+    </div>
+    <br>
+<div class="form-popup" id="myForm">
+<div class="shadow p-3 mb-5 bg-white rounded my_reg">
+  <div class="row">
+
+
+  <form method="POST" class="form-container">
+       {% csrf_token %}
+
+
+
+    <label for="name"><b>NAME:</b></label><br>
+        <input type="name" id="name" name="name" placeholder="Enter your Name" required><hr>
+
+     <label for="number"><b>DOB:</b></label><br>
+        <input type="date" id="birthday" name="dob" placeholder="Enter your DOB" required><hr>
+
+
+    <label for="number"><b>AGE:</b></label><br>
+      <input type="number" id="number" name="age" placeholder="Enter your Age" required><hr>
+
+    <label for="name" required><b>GENDER:</b></label><br>
+        <input type="radio" id="name2" name="gender" value="male">Male<br>
+
+        <input type="radio" id="name3" name="gender" value="female">Female<hr>
+
+ <label for="name"><b>PHONE NUMBER:</b></label><br>
+      <input type="number1" id="number1" name="phonenumber" placeholder="Enter your PhoneNumber" required><hr>
+
+
+  <label for="name"><b>EMAIL ID:</b></label><br>
+      <input type="email" id="email" name="email" placeholder="Enter your Email Id" required><hr>
+
+  <label for="address"><b>ADDRESS:</b></label><br>
+      <input type="address" id="address" name="address" placeholder="Enter your Address" required><hr>
+
+
+ <div class="col-xs-6">
+           <label for="department"><b>DEPARTMENT:</b></label><br>
+    <select class="form-control" name="select1" id="select1">
+        <option value="">--Select--</option>
+    <option value="1">CSE</option>
+    <option value="2">CIVIL</option>
+    <option value="3">ICE</option>
+    <option value="4">EEE</option>
+        <option value="5">ECE</option>
+        <option value="6">MECHANICAL</option>
+  </select>
+</div>
+
+<div class="col-xs-6">
+    <label for="courses"><b>COURSES:</b></label>
+    <select class="form-control" name="select2" id="select2">
+        <option value="">--Select--</option>
+    <option value="1">Mtech CSE</option>
+    <option value="1">Btech CSE</option>
+    <option value="2">Mtech CIVIL</option>
+    <option value="2">Btech CIVIL</option>
+    <option value="3">Mtech ICE</option>
+    <option value="3">Btech ICE</option>
+    <option value="4">Mtech EEE</option>
+    <option value="4">Btech EEE</option>
+    <option value="5">Mtech ECE</option><br>
+        <option value="5">Btech ECE</option><br>
+        <option value="6">Mtech MECHANICAL</option><br>
+        <option value="6">Btech MECHANICAL</option><br>
+
+
+    </select>
+</div>
+<hr>
+
+
+
+
+      <label for="name"><b>PURPOSE:</b></label><br>
+      <select name="purpose" id="purpose" required>
+        <option value="subject knowledge">subject knowledge</option>
+        <option value="carrier goals">carrier goals</option>
+        <option value="beliefs">beliefs</option>
+      </select>
+
+<hr>
+
+
+ <label for="name"><b>MATERIALS PROVIDED:</b></label><br>
+    <input type="radio" id="name4" name="gender"> sslc certificate<br>
+
+    <input type="radio" id="name5" name="gender"> plus two certificate<hr>
+   <button onclick="showAlert()">SUBMIT</button>
+
+ <!--<b><input type="SUBMIT"></b><hr>-->
+
+</form>
+{% for msg in messages %}
+<h6 style="color:red">{{msg}}</h6>
+{% endfor %}
+
+</div>
+
+
+
+  </div>
+
+
+
+</div>
+<br>
+
+<script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+var commonValues ={
+    cse :["mtech","btech"],
+    ice :["mtech-ice","btech-ice"],
+    eee :["mtech-eee","btech"],
+    ece :["mtech-ece","btech"],
+    civil :["mtech-civil","btech"],
+    mechanical :["mtech-mechanical","btech"]
+    }
+function changeDropdownValue(value){
+
+    if(value.length == 0){
+       document.getElementById("category").inner.HTML = "<option></option>"
+    }else
+    {
+          varcommonOptions = "";
+          for(categoryID in commonValues[value]){
+            commonOptions += "<option>" + commonValues[value][categoryID] + "<option>"
+          }
+           document.getElementById("category").inner.HTML
+    }
+    }
+
+    var $select1 = $( '#select1' ),
+		$select2 = $( '#select2' ),
+    $options = $select2.find( 'option' );
+
+$select1.on( 'change', function() {
+	$select2.html( $options.filter( '[value="' + this.value + '"]' ) );
+} ).trigger( 'change' );
+
+ function showAlert() {
+        alert('Data Inserted Successfully');
+    }
+
+
+</script>
+<div class="msg_m">
+{% for msg in messages %}
+    <h5 style="color:blue">{{msg}}</h5>
+<div class="my_home">
+  <a class="btn btn-outline-success" href="/"><h5 style="color:green">HOME PAGE</h5></a></div>
+{% endfor %}
+
+</div>
+
+
+
+</body>
+
+
+<br>
+
+<nav class="navbar fixed-bottom bg-light  justify-content-center">
+
+
+<footer>
+		<div class="col text-center "><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<p class="text-center" style="color:black">Neuton©2020. All rights reserved.</p>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</div>
+	</footer>
+</nav>
+</html>

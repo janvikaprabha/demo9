@@ -1,0 +1,96 @@
+
+
+{% load static %}
+
+<li class="active"><a href="index"><i class="fa fa-home"></i>HOME</a></li>
+<br>
+<div class="row my_prod_row_class">
+    <div class="mx_auto">
+       <p><a href="{% url 'credentials:index' %}">Home</a>
+    </div>
+
+
+
+<style>
+    .my_image{
+      width:1300px;
+      height:500px;
+    }
+</style>
+
+<head>
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
+ <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+ <link href="{% static 'styles/bootstrap4/custom.css' %}" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5fcf3068b9.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<div class="mx_auto">
+    {% if department %}
+        <img class="my_image" src="{{department.image.url}}" alt="{{department.name}} style=width:900px; height:300px;">
+</div>
+    <br>
+<div>
+        <h1 class="text-center my_title">{{department.name}}</h1>
+        <p class="text-justify">{{department.description}}</p>
+</div>
+    {% else %}
+
+
+<br>
+
+    {% endif %}
+</div>
+</div>
+
+<div class="container">
+    <div class="row mx_auto">
+        {% for product in products.object_list %}
+            <div class="my_bottom_margin col-9 col-sm-12 col-md-4 xol-lg-4">
+
+                <div class="card text-center" style="min-width:18rem;">
+                    <a href="{{product.get_url}}"><img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}"  style="width:200px;height:200px;"></a>
+
+                <div class="card-body">
+                    <h6 style="color:red">{{product.name}}</h6>
+
+                </div>
+            </div>
+   </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+
+            <div class="mx_auto my_bottom_margin">
+                {% if products.paginator.num_pages > 1 %}
+                 <hr>
+
+                <div class="text-center">
+                    {% for pg in products.paginator.page_range %}
+                        <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </div>
+                <br>
+
+            </div>
+
+</div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+
+
+{% load static %}
+
+<li class="active"><a href="index"><i class="fa fa-home"></i>HOME</a></li>
+<br>
+
+
+
+
+
+
+<div class="row my_prod_row_class">
+    <div class="mx_auto">
+       <p><a href="{% url 'collegeapp:department' %}">Home</a>
+    </div>
+
+
+
+<div class="container">
+<br>
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+            <div style="min-width:18rem">
+                <img src="{{product.image.url}}" alt="{{product.name}}" width="300px;" height="300px;">
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                <div>
+                <h4 class="my_prod_title" style="color:red;">{{product.name}}</h4>
+
+
+
+                <p class="text-justify my_prod_text">{{product.description}}</p>
+
+
+
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+

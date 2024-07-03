@@ -1,0 +1,94 @@
+{% load static %}
+
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<header>
+ <center>
+        <h2 style="color:blue"><b>NEUTON COLLEGE OF ENGINEERING</b></h2>
+        <h6 style="color:dark-pink">Affliated to APJ Abdul Kalam Technological University,Kerala</h6>
+    </center>
+
+<nav class="navbar bg-black">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><h5 style="color:white">HOME</h5></a>
+  </div>
+</nav>
+</header>
+<head>
+    <link rel="stylesheet"  href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet"  href="{% static 'js/has.js' %}">
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5fcf3068b9.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+     <style>
+
+
+        .body {
+               background-image: url('https://wallpapers.com/images/hd/bubbles-background-da0xbfyvtmf5l6bf.jpg');
+               background-repeat: no-repeat;
+               background-size: 1600px;
+  width: 800px;
+  height: 800px;
+              }
+
+.my_footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+.my_reg{
+             position: fixed;
+    top:30%;
+
+  left:43%;
+  max-width: 500px;
+   max-height:1000px;
+  padding: 10px;
+  background-color: silver;
+  margin:0 auto;
+  text-align:left;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="shadow p-3 mb-5 bg-white rounded my_reg">
+<h4 style="color:green"><b>Login</b></h4>
+<form action="login" method="post">
+    {% csrf_token %}
+     <input type="text" name="username" placeholder="Username" id="username" required><br><hr>
+    <input type="password" name="password" placeholder="Enter your password" required><br><hr>
+    <input type="submit">
+</form>
+
+
+{% for msg in messages %}
+<h2 style="color:aqua">{{msg}}</h2>
+{% endfor %}
+<hr>
+<div>
+
+  <form>
+      <h7>New user?:</h7>
+      <a class="btn btn-outline-success" href="register" type="register"><h7 style="color:red">Click here to register</h7></a>
+  </form>
+</div>
+
+</div>
+
+</body>
+<br>
+
+<div class="footer navbar-fixed-bottom my_footer">
+    <p style="text-align:center;">Neuton©2020. All rights reserved.</p>
+</div>
+
+</html>
